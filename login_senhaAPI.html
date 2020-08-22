@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
+    <html lang="eng">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Login e Senha</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap">
+    </head>
 <body>
-        <h2>Login e Senha</h2>
+        <form action="action_page.php">
+        <div  id="Welcome"></div><br>
+            <h2>Sign in</h2> 
+            
+        <div class="input">
+            <input type required="e-mail" id="e-mail">
+            <label>E-mail</label>
+            <span class="error"></span>
+        </div>
+        
+        <div class="input">
+            <input type="Password" id="Password" required type="Nome">
+            <label>Password</label>
+            <span class="error"></span>
+        </div>
+
+        <button type="submit">Log in</button>
+        
+        <br>
+        <span>
+            Don´t have an account?
+            <a href="http://52.91.139.190/fsapi/users/login">Sign up</a>
+        </br>
+        </span>
+    </form>
     
-    <div  id="demo"> 
-            <button type="button" on click="loadXMLDoc()">Header</button>
-    </div>
     <script>
         function loadXMLDoc() {
             var Xtttp = new XMLHttpRequest();
@@ -15,8 +45,11 @@
                     this.responseText;
                 }
             };
-            http.open("json", "http://52.91.139.190/fsapi/users/login", true);
-            http.send();
+            http.open("POST", "http://52.91.139.190/fsapi/users/login", true);
+            http.send({
+                "email": "tlopes@gmail.com",
+                "password": "123456"
+            });
         }
     </script>
 </body>
