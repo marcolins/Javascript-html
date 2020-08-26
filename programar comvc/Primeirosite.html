@@ -4,7 +4,7 @@
 <body>
 
         <h2>Ficha Cadastral</h2>
-        <form action="/action_page.php">
+        <form action="\programar comvc\cadastro.html">
         <label for="Name">Nome:</label><br>
         <input type="text" id="Name" name="Name"><br>
         <label for="Name">Universidade:</label><br>
@@ -34,10 +34,26 @@
 <script>
         function validar(){
             var name= document.getElementById("Name");
-            if(name == "") {
-                alert("Por favor digite seu nome");
-            return false;
+            if(name == ""){
+                alert("Digite seu nome");
+                return False;
+            var universidade= document.getElementById('Universidade');
+            if(universidade == ""){
+                alert("Digite sua universidade")
+                return False;
+             var empresas=document.getElementById("Empresas");
+            if(empresas == ""){
+                alert("Digite a empresa");
+                return False;
+            var horarios=document.getElementById("Horários");
+            if(horarios == ""){
+                alert("Digite o horário");
+                return False;
+               
+                }
+              }
             }
+          }
         }
     </script>
 </head>
