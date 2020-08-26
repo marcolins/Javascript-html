@@ -15,14 +15,16 @@
             <h2>Sign in</h2> 
             
         <div class="input">
-            <input type required="e-mail" id="e-mail">
+            <input type required="e-mail" id="email">
             <label>E-mail</label>
             <span class="error"></span>
         </div>
-        
+
+        <p></p>
+
         <div class="input">
-            <input type="Password" id="Password" required type="Nome">
-            <label>Password</label>
+            <input type="Password" id="senha" required type="Nome">
+            <label>Senha</label>
             <span class="error"></span>
         </div>
 
@@ -31,14 +33,16 @@
         <br>
         <span>
             Don´t have an account?
-            <a href="http://52.91.139.190/fsapi/users/login" style="color:blue=#00008B;">Sign up</a>
+            <a href="registrar.html">Sign up</a>
         </br>
         </span>
     </form>
     
     <script>
         function loadXMLDoc() {
-            var Xtttp = new XMLHttpRequest();
+            var Xhttp = new XMLHttpRequest();
+            var email=document.getElementById("email").value;
+            var senha=document.getElementByid("senha").value;
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200){
                     document.getElementById("demo").innerHTML =
@@ -47,10 +51,13 @@
             };
             http.open("POST", "http://52.91.139.190/fsapi/users/login", true);
             http.send({
-                "email": "tlopes@gmail.com",
-                "password": "123456"
+                "email": email,
+                "password": senha
             });
         }
     </script>
 </body>
 </html>
+
+
+<!--Declaração de variável, inicialização de variavel, manipulação de elementos do formulário, algoritimo-->
