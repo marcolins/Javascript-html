@@ -10,14 +10,13 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap">
     </head>
 <body>
-        <form action="action_page.php">
+        <form>
         <div  id="Welcome"></div><br>
             <h2>Sign in</h2> 
             
         <div class="input">
             <input type required="e-mail" id="email">
             <label>E-mail</label>
-            <span class="error"></span>
         </div>
 
         <p></p>
@@ -25,28 +24,28 @@
         <div class="input">
             <input type="Password" id="senha" required type="Nome">
             <label>Senha</label>
-            <span class="error"></span>
+        </div><br>
+
+        <div id="login">
+        <button type="submit" onclick="loadXMLdoc()">Log in</button>
         </div>
 
-        <button type="submit">Log in</button>
-        
-        <br>
         <span>
             Don´t have an account?
-            <a href="registrar.html">Sign up</a>
-        </br>
+            <a href="cadastro.html">Sign up</a><br>
+
         </span>
     </form>
     
     <script>
-        function loadXMLDoc() {
-            var Xhttp = new XMLHttpRequest();
+        function loadXMLdoc() {
+            var xmlhttp = new XMLHttpRequest();
             var email=document.getElementById("email").value;
             var senha=document.getElementByid("senha").value;
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200){
-                    document.getElementById("demo").innerHTML =
-                    this.responseText;
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    document.getElementById("login").innerHTML =
+                    xmlhttp.responseText;
                 }
             };
             http.open("POST", "http://52.91.139.190/fsapi/users/login", true);
@@ -60,4 +59,4 @@
 </html>
 
 
-<!--Declaração de variável, inicialização de variavel, manipulação de elementos do formulário, algoritimo-->
+<!--Declaração de variável, inicialização de variavel, manipulação de elementos do formulário-->

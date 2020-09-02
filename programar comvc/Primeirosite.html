@@ -1,10 +1,12 @@
 
 <html>
 <head>
+    <title>Validar formulário</title>
+    <meta charset="utf-8">
 <body>
-
+    
         <h2>Ficha Cadastral</h2>
-        <form action="\programar comvc\cadastro.html">
+        <form>
         <label for="Name">Nome:</label><br>
         <input type="text" id="Name" name="Name"><br>
         <label for="Name">Universidade:</label><br>
@@ -13,42 +15,48 @@
         <input type="text" id="Empresas" name="Empresas"><br>
         <label for="Name">Horários:</label><br>
         <input type="text" id="Horários" name="Horários"><br>
+
         <p></p>
+
         <label for="Name">Avatars:</label>
         <select type="text" id="pontos"><br>
+            <option value="">Selecione seu Avatar</option>
             <option value="Ponto">Avatar 1</option><br>
             <option value="Ponto">Avatar 2</option><br>
             </select><br><br>
         <label for="Name">Pontos:</label>
+       
+        </script>
         <select type="text" id="pontos">
+            <option value="">Selecione sua opção</option>
             <option value="Ponto">Ponto retirado</option><br>
             <option value="Ponto">Ponto adicional</option><br>
         
     </select>  
 
         <p></p>
-        <input type="submit" value="Submit"><br>
+        <input type="submit" value="Submit" onclick="validar()"><br>
 
         </form>
 </body> 
 <script>
         function validar(){
-            var name= document.getElementById("Name");
+            var name= document.getElementById("Name").value;
             if(name == ""){
-                alert("Digite seu nome");
+                alert("Digite seu nome").value;
                 return False;
             }
-            var universidade= document.getElementById('Universidade');
+            var universidade= document.getElementById('Universidade').value;
             if(universidade == ""){
-                alert("Digite sua universidade")
+                alert("Digite sua universidade").value;
                 return False;
             }
-             var empresas=document.getElementById("Empresas");
+             var empresas=document.getElementById("Empresas").value;
             if(empresas == ""){
                 alert("Digite a empresa");
                 return False;
             }
-            var horarios=document.getElementById("Horários");
+            var horarios=document.getElementById("Horários").value;
             if(horarios == ""){
                 alert("Digite o horário");
                 return False;
